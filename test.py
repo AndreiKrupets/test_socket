@@ -43,7 +43,7 @@ def sender(client, msg):
 
 while True:
     client, addr = server_socket.accept()
-    logging.warning(f"accept client by addr {addr}")
+    logging.warning("accept client by addr {:}".format (addr))
     msg = client.recv(4096)
     request = msg.decode("utf-8").split("\n")
     response = get_response(request)
